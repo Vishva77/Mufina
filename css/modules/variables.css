@@ -1,0 +1,41 @@
+/* ==========================================================================
+   CSS VARIABLES & DESIGN TOKENS
+   ========================================================================== */
+:root {
+  /* Color Palette - Henna, Earth, Cream & Gold */
+  --primary: #1F3A2B;          /* Deep Henna Green */
+  --primary-dark: #12241A;     /* Dark Evergreen */
+  --primary-light: #2D543F;    /* Medium Sage Green */
+  --secondary: #5A3825;        /* Rich Henna Terracotta / Brown */
+  --secondary-light: #8B5A3C;  /* Warm Cinnamon */
+  --gold: #D4AF37;             /* Metallic Gold */
+  --gold-light: #F4E8C1;       /* Soft Light Gold Overlay */
+  --gold-hover: #AA8B22;       /* Deep Gold Hover State */
+  --bg-main: #FDFBF7;          /* Soft Ivory Cream (Primary BG) */
+  --bg-alt: #F7F3EC;           /* Soft Linen Beige (Secondary BG) */
+  --bg-card: #FFFFFF;          /* Pure White for Card Surface */
+  --text-dark: #2B2521;        /* Deep Charcoal for Body Text */
+  --text-muted: #6B625B;      /* Soft Muted Gray-Brown */
+  --white: #FFFFFF;
+
+  /* Typography */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Spacing & Layout */
+  --nav-height: 80px;
+  --container-width: 1200px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(31, 58, 43, 0.06);
+  --shadow-md: 0 8px 24px rgba(31, 58, 43, 0.1);
+  --shadow-lg: 0 16px 40px rgba(31, 58, 43, 0.14);
+  --shadow-gold: 0 8px 25px rgba(212, 175, 55, 0.25);
+
+  /* Transitions */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 50px;
+}

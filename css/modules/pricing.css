@@ -1,0 +1,80 @@
+/* ==========================================================================
+   PRICING TABLE STYLES
+   ========================================================================== */
+.pricing-filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-chip {
+  padding: 0.4rem 1.2rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  background-color: var(--white);
+  color: var(--text-dark);
+  border: 1px solid rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-chip:hover,
+.filter-chip.active {
+  background-color: var(--primary);
+  color: var(--gold);
+  border-color: var(--primary);
+}
+
+.table-responsive-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  background: var(--white);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.pricing-table th,
+.pricing-table td {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.pricing-table th {
+  background-color: var(--primary);
+  color: var(--gold);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.pricing-table tbody tr:hover {
+  background-color: rgba(244, 232, 193, 0.2);
+}
+
+.category-tag {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.category-henna { background: #E8F5E9; color: #2E7D32; }
+.category-makeup { background: #FCE4EC; color: #C2185B; }
+.category-saree { background: #FFF3E0; color: #E65100; }
+
+.price-text {
+  font-weight: 800;
+  color: var(--secondary);
+}

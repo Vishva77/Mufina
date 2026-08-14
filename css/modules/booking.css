@@ -1,0 +1,139 @@
+/* ==========================================================================
+   BOOKING FORM & INFO STYLES
+   ========================================================================== */
+.booking-container {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 3rem;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.booking-info-box {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: var(--white);
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.booking-info-header h3 {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+.booking-info-header p {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.95rem;
+  margin-bottom: 2.5rem;
+}
+
+.booking-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.info-item-icon {
+  font-size: 1.4rem;
+  background: rgba(255,255,255,0.1);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.info-item-text h5 {
+  font-size: 0.9rem;
+  color: var(--gold-light);
+  font-weight: 700;
+}
+
+.info-item-text p {
+  font-size: 0.95rem;
+  color: var(--white);
+}
+
+.booking-form-box {
+  padding: 3rem 2.5rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group.full-width {
+  grid-column: span 2;
+}
+
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(0,0,0,0.15);
+  background-color: var(--bg-main);
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--gold);
+  background-color: var(--white);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+.form-error {
+  color: #D32F2F;
+  font-size: 0.75rem;
+  display: none;
+}
+
+.form-group.error .form-control {
+  border-color: #D32F2F;
+}
+
+.form-group.error .form-error {
+  display: block;
+}
+
+.form-submit-btn {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 991px) {
+  .booking-container {
+    grid-template-columns: 1fr;
+  }
+}

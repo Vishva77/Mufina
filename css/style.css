@@ -1,0 +1,21 @@
+/**
+ * Mufina's Artistry - Main Stylesheet
+ * Modular CSS Architecture
+ */
+
+/* Import Design Tokens & Base Reset */
+@import url('modules/variables.css');
+@import url('modules/global.css');
+
+/* Import Section Modules */
+@import url('modules/header.css');
+@import url('modules/hero.css');
+@import url('modules/about.css');
+@import url('modules/services.css');
+@import url('modules/packages.css');
+@import url('modules/pricing.css');
+@import url('modules/gallery.css');
+@import url('modules/booking.css');
+@import url('modules/contact.css');
+@import url('modules/footer.css');
+@import url('modules/owner.css');

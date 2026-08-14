@@ -1,0 +1,33 @@
+{
+  "name": "mufina",
+  "version": "1.0.0",
+  "description": "MongoDB & Cloudinary Web Application for Mufina's Artistry",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "build": "echo 'Netlify build complete'"
+  },
+  "keywords": [
+    "mufina",
+    "henna",
+    "makeup",
+    "mongodb",
+    "express",
+    "cloudinary"
+  ],
+  "author": "Mufina's Artistry",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cloudinary": "^2.10.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^8.6.2",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^8.3.1",
+    "serverless-http": "^4.0.0"
+  }
+}

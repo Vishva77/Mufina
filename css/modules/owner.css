@@ -1,0 +1,265 @@
+/* ==========================================================================
+   OWNER PORTAL & ADMIN CONTROL STYLES
+   ========================================================================== */
+.owner-bar {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(90deg, #12241A 0%, #2D543F 100%);
+  color: #FFFFFF;
+  padding: 0 1rem;
+  z-index: 1005;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  border-bottom: 2px solid var(--gold);
+}
+
+.owner-bar.active {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Offset header & navigation when owner bar is active */
+body.owner-mode-active {
+  padding-top: 40px;
+}
+
+body.owner-mode-active .header {
+  top: 40px;
+}
+
+@media (max-width: 767px) {
+  body.owner-mode-active .nav-menu {
+    top: 110px;
+    height: calc(100vh - 110px);
+  }
+}
+
+.owner-bar-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.owner-bar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+}
+
+.btn-owner-action {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  background: rgba(255,255,255,0.15);
+  color: #FFFFFF;
+  border: 1px solid rgba(255,255,255,0.3);
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.btn-owner-action:hover {
+  background: var(--gold);
+  color: var(--primary-dark);
+}
+
+.btn-owner-logout {
+  background: #D32F2F;
+  border-color: #D32F2F;
+}
+
+.btn-owner-logout:hover {
+  background: #B71C1C;
+  color: #FFFFFF;
+}
+
+/* Inline Controls for Owner Mode */
+.owner-controls-inline {
+  display: none;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--gold);
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+body.owner-mode-active .owner-controls-inline {
+  display: flex;
+}
+
+.pricing-table-owner-actions {
+  display: none;
+  gap: 6px;
+}
+
+body.owner-mode-active .pricing-table-owner-actions {
+  display: flex;
+}
+
+.owner-crud-bar {
+  display: none;
+  text-align: center;
+  margin: 1.5rem 0;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+body.owner-mode-active .owner-crud-bar {
+  display: flex;
+}
+
+.btn-owner-edit,
+.btn-owner-delete,
+.btn-owner-revert {
+  padding: 0.35rem 0.8rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.btn-owner-edit {
+  background: var(--gold-light);
+  color: var(--primary-dark);
+  border: 1px solid var(--gold);
+}
+
+.btn-owner-edit:hover {
+  background: var(--gold);
+}
+
+.btn-owner-delete {
+  background: #FFEBEE;
+  color: #C62828;
+  border: 1px solid #EF9A9A;
+}
+
+.btn-owner-delete:hover {
+  background: #D32F2F;
+  color: #FFFFFF;
+}
+
+.btn-owner-revert {
+  background: #E3F2FD;
+  color: #1565C0;
+  border: 1px solid #90CAF9;
+}
+
+.btn-owner-revert:hover {
+  background: #1976D2;
+  color: #FFFFFF;
+}
+
+.gallery-owner-badge {
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+  gap: 6px;
+}
+
+body.owner-mode-active .gallery-owner-badge {
+  display: flex;
+}
+
+.add-photo-owner-box {
+  display: none;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+body.owner-mode-active .add-photo-owner-box {
+  display: block;
+}
+
+/* Owner Modals */
+.owner-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(18, 36, 26, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  padding: 1.5rem;
+}
+
+.owner-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.owner-modal-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 480px;
+  padding: 2.25rem 2rem;
+  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--gold);
+  position: relative;
+}
+
+.owner-modal-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.owner-modal-header h3 {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  color: var(--primary);
+}
+
+.owner-modal-header p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.owner-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.owner-modal-close:hover {
+  color: var(--primary);
+}
+
+.owner-login-error {
+  color: #D32F2F;
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: 0.5rem;
+  display: none;
+}
