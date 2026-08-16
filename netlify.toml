@@ -9,11 +9,11 @@
 # Redirect API requests to Netlify Serverless Function
 [[redirects]]
   from = "/api/*"
-  to = "/.netlify/functions/api/api/:splat"
+  to = "/.netlify/functions/api/:splat"
   status = 200
   force = true
 
-# SPA Fallback for HTML5 single page app navigation
+# SPA fallback
 [[redirects]]
   from = "/*"
   to = "/index.html"
