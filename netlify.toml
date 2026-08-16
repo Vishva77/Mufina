@@ -1,4 +1,5 @@
 [build]
+  command = "npm run build"
   publish = "."
   functions = "netlify/functions"
 
@@ -6,14 +7,12 @@
   node_bundler = "esbuild"
   included_files = ["images/**", "server/**"]
 
-# Redirect API requests to Netlify Serverless Function
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/api/:splat"
   status = 200
   force = true
 
-# SPA fallback
 [[redirects]]
   from = "/*"
   to = "/index.html"
