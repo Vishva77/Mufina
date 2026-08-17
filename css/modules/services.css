@@ -148,8 +148,13 @@
   font-size: 0.85rem;
 }
 
-@media (max-width: 414px) {
+@media (max-width: 767px) {
   .services-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .service-img {
+    height: 160px;
   }
 }

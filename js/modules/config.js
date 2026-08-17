@@ -1,5 +1,5 @@
 /**
- * Mufina's Artistry - Central Business Configuration
+ * Mufina's Artistry - Central Business Configuration & Dynamic API Resolver
  */
 const businessInfo = {
   name: "Mufina's Artistry",
@@ -11,6 +11,19 @@ const businessInfo = {
   instagramUrl: "https://www.instagram.com/mufiartistry?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
   location: "Tamil Nadu, India"
 };
+
+/**
+ * Dynamically resolves API URL endpoints.
+ * Automatically routes Live Server (127.0.0.1:5500) to local Express backend (http://localhost:8080)
+ */
+function getApiUrl(endpoint) {
+  const path = endpoint.startsWith('/') ? endpoint : '/' + endpoint;
+  const p = window.location.port;
+  if (p === '5500' || p === '5501' || p === '3000' || window.location.protocol === 'file:') {
+    return 'http://localhost:8080' + path;
+  }
+  return path;
+}
 
 function initBusinessInfo() {
   const yearElement = document.getElementById('current-year');

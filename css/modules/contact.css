@@ -1,11 +1,11 @@
 /* ==========================================================================
-   CONTACT SECTION STYLES
+   CONTACT SECTION STYLES (100% RESPONSIVE)
    ========================================================================== */
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.5rem;
-  margin-bottom: 4rem;
+  margin-bottom: 3.5rem;
 }
 
 .contact-card {
@@ -16,6 +16,10 @@
   box-shadow: var(--shadow-sm);
   border: 1px solid rgba(212, 175, 55, 0.2);
   transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .contact-card:hover {
@@ -25,13 +29,13 @@
 }
 
 .contact-card-icon {
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .contact-card h4 {
   font-family: var(--font-heading);
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: var(--primary);
   margin-bottom: 0.5rem;
 }
@@ -40,6 +44,12 @@
   color: var(--text-muted);
   font-size: 0.9rem;
   margin-bottom: 1.25rem;
+  word-break: break-word;
+}
+
+.contact-card .btn {
+  width: 100%;
+  justify-content: center;
 }
 
 .map-wrapper {
@@ -47,4 +57,21 @@
   overflow: hidden;
   box-shadow: var(--shadow-md);
   border: 2px solid var(--gold);
+}
+
+/* Mobile Responsiveness Media Queries */
+@media (max-width: 767px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .map-wrapper iframe {
+    height: 300px !important;
+  }
 }

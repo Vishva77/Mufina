@@ -1,5 +1,5 @@
 /* ==========================================================================
-   BOOKING FORM & INFO STYLES
+   BOOKING FORM & INFO STYLES (100% RESPONSIVE)
    ========================================================================== */
 .booking-container {
   display: grid;
@@ -29,9 +29,10 @@
 }
 
 .booking-info-header p {
-  color: rgba(255,255,255,0.8);
+  color: rgba(255,255,255,0.85);
   font-size: 0.95rem;
   margin-bottom: 2.5rem;
+  line-height: 1.6;
 }
 
 .booking-info-list {
@@ -83,6 +84,7 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
+  width: 100%;
 }
 
 .form-group.full-width {
@@ -102,6 +104,8 @@
   border: 1px solid rgba(0,0,0,0.15);
   background-color: var(--bg-main);
   transition: var(--transition);
+  font-size: 0.95rem;
+  color: var(--text-dark);
 }
 
 .form-control:focus {
@@ -132,8 +136,49 @@
   font-size: 1.05rem;
 }
 
+/* ==========================================================================
+   MOBILE & TABLET MEDIA QUERIES FOR BOOKING FORM
+   ========================================================================== */
 @media (max-width: 991px) {
   .booking-container {
     grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .booking-info-box {
+    padding: 2.5rem 1.75rem;
+  }
+
+  .booking-form-box {
+    padding: 2.5rem 1.75rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .booking-info-box {
+    padding: 2rem 1.25rem;
+  }
+
+  .booking-info-header h3 {
+    font-size: 1.75rem;
+  }
+
+  .booking-form-box {
+    padding: 1.75rem 1.15rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .form-group.full-width {
+    grid-column: span 1;
+  }
+
+  .form-control {
+    min-height: 48px;
+    padding: 0.75rem 0.9rem;
+    font-size: 0.95rem;
   }
 }

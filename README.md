@@ -1,61 +1,35 @@
-# Mufina's Artistry - Secure Owner Dashboard with JWT & Netlify Support
+# Mufina's Artistry - Document-Wide Add Service Delegation & Google-Style SVG Password Toggle
 
-A complete, modern, and elegant Henna & Makeup Artist web application with **JWT Authentication**, **Brute-Force Rate Limiting**, **Helmet Security Headers**, **Cloudinary Image Storage**, **MongoDB Atlas**, and **1-Level Backup/Revert System** built for **Mufina's Artistry**.
-
----
-
-## 🔒 Owner Portal Security Features
-
-The Owner/Admin Portal is protected by multiple enterprise-grade security layers:
-
-1. **JWT (JSON Web Token) Security Tokens**:
-   - Owner authentication generates a signed JWT token on successful login (`POST /api/owner/login`).
-   - All mutating API calls (`POST`, `PUT`, `DELETE`, `REVERT`) require a valid `Authorization: Bearer <token>` HTTP header.
-   - Tokens expire automatically after 24 hours.
-
-2. **Backend Security Middleware (`authMiddleware.js`)**:
-   - Intercepts all REST API mutations (`/api/gallery`, `/api/services`, `/api/pricing`).
-   - Rejects unauthenticated requests with `401 Unauthorized` / `403 Forbidden` status codes.
-
-3. **Brute-Force Protection (`express-rate-limit`)**:
-   - Restricts login attempts to **max 5 failed attempts per 15 minutes** per IP address to block password guessing attacks.
-
-4. **Helmet Security Headers (`helmet`)**:
-   - Sets secure HTTP response headers to protect against XSS, clickjacking, and MIME-sniffing attacks.
-
-5. **Automatic Inactivity Session Expiration**:
-   - Owner session automatically logs out after **30 minutes of inactivity** (mouse/keyboard idle) and clears authentication tokens.
-
-6. **Password Security**:
-   - Supports `bcryptjs` hashed passwords for secure authentication without storing plain text passwords.
+A complete, modern, elegant, and **100% fully responsive** Henna & Makeup Artist web application with **Document-Wide Event Delegation for Modals**, **Google-Style SVG Password Visibility Toggle**, **MongoDB Atlas**, **Cloudinary Storage**, and **Netlify Functions Support** built for **Mufina's Artistry**.
 
 ---
 
-## 🔑 Owner Access & Credentials
+## 🌟 Key Functional Enhancements
 
-- **Owner Login Trigger**: Located at the **very bottom of the website** in the footer (`🔑 Owner Portal Login`).
+1. **Document-Wide Modal Event Delegation**:
+   - The existing `✨ + Add New Service Card` button (`#ownerOpenAddServiceBtn` / `.btn-open-add-service-trigger`) now uses document-level click interception (`document.addEventListener('click', ...)`).
+   - Guarantees 100% reliable opening of `#ownerAddServiceModal` whenever clicked across mobile, tablet, and desktop screens.
+
+2. **Google-Style SVG Password Show / Hide Eye Toggle**:
+   - Replaced plain text emoji with official Google Accounts-style SVG Eye and Eye-Off icons (`#eyeIconOpen` and `#eyeIconClosed`) in `#ownerLoginForm`.
+   - Lets the owner reveal or hide password input (`Mufina@123`) before submitting.
+
+3. **Re-used Existing Pipeline & Data Flow**:
+   - Uses existing `saveNewServiceCard()` frontend logic, `POST /api/services` Express endpoint, `verifyOwnerToken` JWT middleware, Mongoose `ServiceCard` model, and Cloudinary upload helper `uploadToCloudinary()`.
+   - Newly added service cards immediately render into `.services-grid` and support full Edit (`✏️ Edit Card`), Delete (`🗑️ Delete Card`), and Revert (`↩️ Revert Last Change`) functionality using MongoDB document `_id` and `serviceId`.
+
+---
+
+## 🔑 Owner Access Credentials
+
+- **Location**: Footer link at the very end of the website (`🔑 Owner Portal Login`).
 - **User ID**: `mufina`
 - **Password**: `Mufina@123`
 
 ---
 
-## 🚀 1-Click Netlify Deployment Instructions
+## 🚀 Running the Web App
 
-Add the following 5 Environment Variables in your Netlify site settings (**Site settings** → **Environment variables**):
-
-| Key | Value |
-| :--- | :--- |
-| `MONGO_URI` | `mongodb+srv://vikkivishva77_db_user:Vish%40123@webapp.pgdgv0r.mongodb.net/mufina_artistry?retryWrites=true&w=majority&appName=webapp` |
-| `CLOUDINARY_CLOUD_NAME` | `mufina` |
-| `CLOUDINARY_API_KEY` | `116367496164882` |
-| `CLOUDINARY_API_SECRET` | `1TqfhxCkqrZWlTE0Ot3DwE0uD98` |
-| `JWT_SECRET` | `mufina_artistry_owner_secure_jwt_secret_key_2026_x89a` |
-
----
-
-## 🛠️ Local Testing
-
-To run locally:
 ```bash
 npm start
 ```

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   OWNER PORTAL & ADMIN CONTROL STYLES
+   OWNER PORTAL & ADMIN CONTROL STYLES (100% FULLY RESPONSIVE)
    ========================================================================== */
 .owner-bar {
   display: none;
@@ -7,14 +7,14 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 40px;
-  background: linear-gradient(90deg, #12241A 0%, #2D543F 100%);
+  min-height: 44px;
+  background: linear-gradient(90deg, #12241A 0%, #1F3A2B 50%, #2D543F 100%);
   color: #FFFFFF;
-  padding: 0 1rem;
+  padding: 0.4rem 1rem;
   z-index: 1005;
   font-size: 0.85rem;
   font-weight: 600;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.35);
   border-bottom: 2px solid var(--gold);
 }
 
@@ -22,54 +22,54 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: 12px;
 }
 
-/* Offset header & navigation when owner bar is active */
+/* Offset body & fixed header when owner bar is active */
 body.owner-mode-active {
-  padding-top: 40px;
+  padding-top: 48px;
 }
 
 body.owner-mode-active .header {
-  top: 40px;
-}
-
-@media (max-width: 767px) {
-  body.owner-mode-active .nav-menu {
-    top: 110px;
-    height: calc(100vh - 110px);
-  }
+  top: 48px;
 }
 
 .owner-bar-title {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   color: var(--gold);
   white-space: nowrap;
+  font-size: 0.85rem;
+  flex-shrink: 0;
 }
 
 .owner-bar-actions {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   flex-wrap: nowrap;
 }
 
 .btn-owner-action {
-  padding: 0.25rem 0.75rem;
+  padding: 0.3rem 0.75rem;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   border-radius: var(--radius-pill);
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.15);
   color: #FFFFFF;
-  border: 1px solid rgba(255,255,255,0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   cursor: pointer;
   transition: var(--transition);
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  touch-action: manipulation;
 }
 
-.btn-owner-action:hover {
+.btn-owner-action:hover,
+.btn-owner-action:active {
   background: var(--gold);
   color: var(--primary-dark);
 }
@@ -79,7 +79,8 @@ body.owner-mode-active .header {
   border-color: #D32F2F;
 }
 
-.btn-owner-logout:hover {
+.btn-owner-logout:hover,
+.btn-owner-logout:active {
   background: #B71C1C;
   color: #FFFFFF;
 }
@@ -90,8 +91,9 @@ body.owner-mode-active .header {
   margin-top: 0.75rem;
   padding-top: 0.75rem;
   border-top: 1px dashed var(--gold);
-  gap: 8px;
+  gap: 6px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 body.owner-mode-active .owner-controls-inline {
@@ -101,6 +103,8 @@ body.owner-mode-active .owner-controls-inline {
 .pricing-table-owner-actions {
   display: none;
   gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 4px;
 }
 
 body.owner-mode-active .pricing-table-owner-actions {
@@ -123,7 +127,7 @@ body.owner-mode-active .owner-crud-bar {
 .btn-owner-edit,
 .btn-owner-delete,
 .btn-owner-revert {
-  padding: 0.35rem 0.8rem;
+  padding: 0.35rem 0.75rem;
   font-size: 0.75rem;
   font-weight: 700;
   border-radius: var(--radius-pill);
@@ -132,6 +136,8 @@ body.owner-mode-active .owner-crud-bar {
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  white-space: nowrap;
+  touch-action: manipulation;
 }
 
 .btn-owner-edit {
@@ -140,7 +146,8 @@ body.owner-mode-active .owner-crud-bar {
   border: 1px solid var(--gold);
 }
 
-.btn-owner-edit:hover {
+.btn-owner-edit:hover,
+.btn-owner-edit:active {
   background: var(--gold);
 }
 
@@ -150,7 +157,8 @@ body.owner-mode-active .owner-crud-bar {
   border: 1px solid #EF9A9A;
 }
 
-.btn-owner-delete:hover {
+.btn-owner-delete:hover,
+.btn-owner-delete:active {
   background: #D32F2F;
   color: #FFFFFF;
 }
@@ -161,18 +169,29 @@ body.owner-mode-active .owner-crud-bar {
   border: 1px solid #90CAF9;
 }
 
-.btn-owner-revert:hover {
+.btn-owner-revert:hover,
+.btn-owner-revert:active {
   background: #1976D2;
   color: #FFFFFF;
 }
 
+/* Gallery Owner Badge Overlay */
 .gallery-owner-badge {
   display: none;
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 8px;
+  left: 8px;
+  right: 8px;
   z-index: 10;
   gap: 6px;
+  flex-wrap: wrap;
+  background: rgba(18, 36, 26, 0.92);
+  padding: 8px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gold);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 body.owner-mode-active .gallery-owner-badge {
@@ -189,14 +208,14 @@ body.owner-mode-active .add-photo-owner-box {
   display: block;
 }
 
-/* Owner Modals */
+/* Owner Modals (Fully Responsive & Touch Scrollable) */
 .owner-modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(18, 36, 26, 0.85);
+  background: rgba(18, 36, 26, 0.88);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   z-index: 2100;
@@ -206,7 +225,8 @@ body.owner-mode-active .add-photo-owner-box {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
-  padding: 1.5rem;
+  padding: 1.25rem;
+  overflow-y: auto;
 }
 
 .owner-modal.active {
@@ -218,21 +238,25 @@ body.owner-mode-active .add-photo-owner-box {
   background: var(--white);
   border-radius: var(--radius-lg);
   width: 100%;
-  max-width: 480px;
-  padding: 2.25rem 2rem;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem 1.75rem;
   box-shadow: var(--shadow-lg);
   border: 2px solid var(--gold);
   position: relative;
+  margin: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .owner-modal-header {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .owner-modal-header h3 {
   font-family: var(--font-heading);
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: var(--primary);
 }
 
@@ -245,15 +269,23 @@ body.owner-mode-active .add-photo-owner-box {
 .owner-modal-close {
   position: absolute;
   top: 15px;
-  right: 20px;
-  font-size: 1.5rem;
+  right: 18px;
+  font-size: 1.6rem;
   color: var(--text-muted);
   cursor: pointer;
   transition: var(--transition);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.04);
 }
 
 .owner-modal-close:hover {
   color: var(--primary);
+  background: var(--gold-light);
 }
 
 .owner-login-error {
@@ -262,4 +294,75 @@ body.owner-mode-active .add-photo-owner-box {
   text-align: center;
   margin-top: 0.5rem;
   display: none;
+}
+
+/* ==========================================================================
+   MOBILE MEDIA QUERIES FOR OWNER PORTAL
+   ========================================================================== */
+@media (max-width: 991px) {
+  .owner-bar-title strong {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  body.owner-mode-active {
+    padding-top: 50px;
+  }
+
+  body.owner-mode-active .header {
+    top: 50px;
+  }
+
+  body.owner-mode-active .nav-menu {
+    top: 122px;
+    height: calc(100vh - 122px);
+  }
+
+  .owner-bar.active {
+    padding: 0.35rem 0.75rem;
+  }
+
+  .owner-bar-actions {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+    max-width: 100%;
+  }
+
+  .owner-bar-actions::-webkit-scrollbar {
+    display: none;
+  }
+
+  .btn-owner-action {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.6rem;
+  }
+
+  .owner-modal-card {
+    padding: 1.5rem 1.15rem;
+    max-height: 85vh;
+  }
+
+  .gallery-owner-badge {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+    border-bottom: 1px solid var(--gold);
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-owner-edit,
+  .btn-owner-delete,
+  .btn-owner-revert,
+  .owner-crud-bar .btn,
+  .add-photo-owner-box .btn {
+    width: 100%;
+    justify-content: center;
+  }
 }

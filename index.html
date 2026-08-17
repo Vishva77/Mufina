@@ -34,12 +34,9 @@
       <span>👑</span> <strong>Owner Mode Active (Mufina)</strong>
     </div>
     <div class="owner-bar-actions">
-      <button id="ownerOpenAddServiceBtn" class="btn-owner-action">💅 + Add Service</button>
-      <button id="ownerOpenAddPhotoBtn" class="btn-owner-action">📷 + Add Photo</button>
-      <button id="ownerOpenAddPriceBtn" class="btn-owner-action">💰 + Add Price</button>
       <button id="ownerSyncAllBtn" class="btn-owner-action" style="background: var(--gold); color: var(--primary-dark); font-weight: 700;">💾 Save & Sync All</button>
-      <button id="ownerResetBtn" class="btn-owner-action">Reset Defaults</button>
-      <button id="ownerLogoutBtn" class="btn-owner-action btn-owner-logout">Logout</button>
+      <button id="ownerResetBtn" class="btn-owner-action">🔄 Reset Defaults</button>
+      <button id="ownerLogoutBtn" class="btn-owner-action btn-owner-logout">🚪 Logout</button>
     </div>
   </div>
 
@@ -217,7 +214,7 @@
         </div>
 
         <div class="owner-crud-bar">
-          <button class="btn btn-primary btn-open-add-service-trigger">💅 + Add New Service Card</button>
+          <button id="ownerOpenAddServiceBtn" class="btn btn-primary btn-open-add-service-trigger">✨ + Add New Service Card</button>
         </div>
 
         <div class="services-grid">
@@ -1152,7 +1149,13 @@
         </div>
         <div class="form-group" style="margin-bottom: 1rem;">
           <label for="ownerPassword" class="form-label">Password *</label>
-          <input type="password" id="ownerPassword" class="form-control" placeholder="Enter Password" required>
+          <div class="password-input-container" style="position: relative; display: flex; align-items: center;">
+            <input type="password" id="ownerPassword" class="form-control" placeholder="Enter Password" style="padding-right: 45px;" required>
+            <button type="button" id="toggleOwnerPasswordBtn" class="password-toggle-btn" aria-label="Toggle password visibility" style="position: absolute; right: 12px; background: none; border: none; cursor: pointer; color: #5F6368; padding: 4px; display: flex; align-items: center; justify-content: center; z-index: 5;">
+              <svg id="eyeIconOpen" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              <svg id="eyeIconClosed" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+            </button>
+          </div>
         </div>
         <p id="ownerLoginError" class="owner-login-error"></p>
         <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
@@ -1273,6 +1276,51 @@
         </div>
         <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
           Save Service to Cloudinary & MongoDB
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- OWNER EDIT SERVICE CARD MODAL -->
+  <div class="owner-modal" id="ownerEditServiceModal" role="dialog" aria-modal="true" aria-label="Edit Service Card">
+    <div class="owner-modal-card">
+      <span class="owner-modal-close">&times;</span>
+      <div class="owner-modal-header">
+        <h3>✏️ Edit Service Card</h3>
+        <p>Update title, price, description, category, and image for this service.</p>
+      </div>
+      <form id="ownerEditServiceForm">
+        <input type="hidden" id="editServiceId">
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label for="editServiceTitle" class="form-label">Service Title *</label>
+          <input type="text" id="editServiceTitle" class="form-control" required>
+        </div>
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label for="editServiceCategory" class="form-label">Category *</label>
+          <select id="editServiceCategory" class="form-control" required>
+            <option value="henna">Henna / Mehendi Art</option>
+            <option value="makeup">Makeup Services</option>
+            <option value="saree">Saree Draping & Pre-Pleating</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label for="editServicePrice" class="form-label">Price / Price Range *</label>
+          <input type="text" id="editServicePrice" class="form-control" required>
+        </div>
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label for="editServiceDesc" class="form-label">Service Description *</label>
+          <textarea id="editServiceDesc" class="form-control" rows="3" required></textarea>
+        </div>
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label for="editServiceFile" class="form-label">Change Image (File Upload)</label>
+          <input type="file" id="editServiceFile" class="form-control" accept="image/*">
+        </div>
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label for="editServiceUrl" class="form-label">Or Change Image URL</label>
+          <input type="url" id="editServiceUrl" class="form-control" placeholder="https://example.com/image.jpg">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+          Save Changes to Cloudinary & MongoDB
         </button>
       </form>
     </div>
